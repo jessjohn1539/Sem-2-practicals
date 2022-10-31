@@ -8,7 +8,7 @@ int main()
 {
     int gdriver = DETECT, gmode;
     int x1, y1, x2, y2, i, step, xn, yn, dx, dy;
-    //clrscr();
+    clrscr();
     initgraph(&gdriver, &gmode, "C:\\TC\\BGI");
     printf("Enter the starting coordinates: ");
     scanf("%d%d", &x1, &y1);
