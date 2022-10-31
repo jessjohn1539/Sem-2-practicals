@@ -2,9 +2,9 @@ EXP 1: DDA line drawing algorithm [done]
 EXP 2: Bresenham's Line drawing algorithm [done]
 EXP 3: Mid point circle drawing algorithm [done]
 EXP 4: Mid point Ellipse drawing algorithm
-EXP 5: Scanline Polygon Filling Algorithm
-EXP 6: 2D Transformation
-EXP 7: Cohen-Sutherland Line Clipping Algorithm
+EXP 5: Scanline Polygon Filling Algorithm [done]
+EXP 6: 2D Transformation [Done]
+EXP 7: Cohen-Sutherland Line Clipping Algorithm [Done]
 EXP 8: Sutherland-Hodgeman Polygon clipping algorithm
 EXP 9: Bezier curve [done]
-EXP 10: Koch curve generation
+EXP 10: Koch curve generation [Done]
