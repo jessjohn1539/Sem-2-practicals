@@ -1,3 +1,16 @@
+/*
+ALGORITHM
+1.	Input the two line end-points, storing the left end-point in (x0, y0)
+2.	Plot the point (x0, y0)
+3.	Calculate the constants Δx, Δy, 2Δy, and (2Δy - 2Δx) and get the first value for the decision parameter as:
+                P0 = 2Δy - Δx 
+4.	At each xk along the line, starting at k = 0, perform the following test. If pk < 0, the next point to plot is (xk+1, yk ) and:
+                Pk+1 = Pk + 2Δy
+Otherwise, the next point to plot is (xk+1, yk+1) and:
+                Pk+1 = Pk + 2Δy - 2Δx
+5.	Repeat step 4 (Δx – 1) times
+
+*/
 #include <stdio.h>
 #include <graphics.h>
 #include <conio.h>

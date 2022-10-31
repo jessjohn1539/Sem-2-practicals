@@ -1,3 +1,9 @@
+/*
+ALGORITHM
+1.divide the line segment into three segments of equal length.
+2.draw an equilateral triangle that has the middle segment from step 1 as its base and. points outward.
+3.remove the line segment that is the base of the triangle from step 2.
+*/
 #include<graphics.h>
 #include <conio.h>
 #include <math.h>

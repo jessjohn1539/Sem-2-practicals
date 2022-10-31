@@ -1,4 +1,14 @@
-
+/*
+ALGORITHM
+1.  Start
+2.      Read the coordinate values to draw the 2D figure and  perform the following steps to achieve the necessary transformations
+3.      Translation : Read the translation vector tx and ty and compute the new position using x1 = x + tx  , y1 = y + ty and display the new position
+4.      Rotation : Read the rotation angle Θ  and  compute the new position using  the formula x1 = x Cos Θ – y Sin Θ , y1 = x Sin Θ + y Cos Θ and display the new position
+5.      Scaling : Read the scaling factor  sx and sy and compute the new position using x1 = x. sx  , y1 = y. sy  and display the new position
+6.      Shearing : Shearing is done in x direction and y direction using the factor shx and shy   for X direction: x1 = x + shx (y – yref), y1 = y & for Y direction x1 = x , y1 = shy (x – xref)
+7.      Reflection : Reflection depends upon the reflection axis . If reflection axis is y = x , then x1 = y and y1 = x
+8.       Stop
+*/
 #include <stdio.h>
 #include <process.h>
 #include <conio.h>

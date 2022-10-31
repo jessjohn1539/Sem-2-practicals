@@ -1,3 +1,13 @@
+/*
+ALGORITHM
+1.  Get Four control points say A(x A , yA ), B(x B , yB), C(xC , yC),D(xD , yD )
+2.	Divide the curves represented by point A,B,C and D in two sections
+3.	Repeat the step 2 for section A AB, ABC, and ABCD and section ABCD , BCD, CD and D
+4.	Repeat step 3 until we have sections so short that they can be replaced by straight lines
+5.	Replace small sections by straight lines
+6.	Stop
+
+*/
 #include <stdio.h>
 #include <graphics.h>
 #include <conio.h>

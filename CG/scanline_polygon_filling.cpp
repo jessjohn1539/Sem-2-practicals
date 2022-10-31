@@ -1,3 +1,13 @@
+/*
+ALGORITHM
+1.	the horizontal scanning of the polygon from its lowermost to its topmost vertex
+2.	identify the edge intersections of scan line with polygon
+3.	Build the edge table
+a. Each entry in the table for a particular scan line contains the maximum y value for that edge, the x-intercept value (at the lower vertex) for the edge, and the inverse slope of the edge.
+4.	Determine whether any edges need to be splitted or not. If there is need to split, split the edges.
+5.	Add new edges and build modified edge table.
+6.	Build Active edge table for each scan line and fill the polygon based on intersection of scanline with polygon edges.
+*/
 #include <stdio.h>
 #include <conio.h>
 #include <graphics.h>
