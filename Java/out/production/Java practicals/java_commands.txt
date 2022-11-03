@@ -1,0 +1,16 @@
+#Linux commands for java programming:
+
+#check for java:
+	java --version
+
+#install java:
+	sudo apt install default-jre
+	sudo apt install openjdk-14-jdk
+   //oracle java must be downloaded from browser.
+	cd Downloads/
+	sudo dpkg -i //file name
+	
+#Run java program:
+	javac hello.java (program name)
+	java  hello (only the name)
+ 
