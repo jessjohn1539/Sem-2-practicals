@@ -13,28 +13,28 @@ typedef struct node *NODE;
 NODE insert(NODE start, float co, int ex)
 {
 
-    NODE ptr, tmp;
-    tmp = (NODE)malloc(sizeof(struct node));
-    tmp->coef = co;
-    tmp->expo = ex;
+    NODE p, q;
+    q = (NODE)malloc(sizeof(struct node));
+    q->coef = co;
+    q->expo = ex;
 
     if (start == NULL || ex > start->expo)
     {
-        tmp->link = start; // setting the start
-        start = tmp;
+        q->link = start; // setting the start
+        start = q;
     }
 
     else
     {
-        ptr = start;
+        p = start;
 
-        while (ptr->link != NULL && ptr->link->expo > ex)
-            ptr = ptr->link;
-        tmp->link = ptr->link;
-        ptr->link = tmp;
+        while (p->link != NULL && p->link->expo > ex)
+            p = p->link;
+        q->link = p->link;
+        p->link = q;
 
-        if (ptr->link == NULL)
-            tmp->link = NULL;
+        if (p->link == NULL)
+            q->link = NULL;
     }
     return start;
 }
