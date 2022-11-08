@@ -1,4 +1,4 @@
-//fully menu driven program of a linked list
+//fully menu driven program of a linked list from RKdemy
 #include <stdio.h>
 #include <stdlib.h>
 
