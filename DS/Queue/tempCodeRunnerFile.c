@@ -1,2 +1,1 @@
-
-{
+printf("Enqueued element %d\n", val);

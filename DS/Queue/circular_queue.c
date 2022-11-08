@@ -56,6 +56,7 @@ void enqueue(queue *q, int val)
     {
         q->rear = (q->rear + 1) % q->size;
         q->arr[q->rear] = val;
+        printf("Enqueued element %d\n", val);
     }
 }
 int dequeue(queue *q)
