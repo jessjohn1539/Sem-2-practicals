@@ -1,3 +1,10 @@
+/*
+Order of precedence of operators:
+1. Parenthesis (),{},[]
+2. Exponents ^(right to left)
+3. Multiplication and division (left to right)
+4. Addition and subtraction (left to right)
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
