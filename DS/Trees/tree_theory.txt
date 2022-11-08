@@ -1,0 +1,42 @@
+#Tree:
+   - is used to store hierarchical data.
+   - A collection of entities called nodes linked together
+      to  simulate a hierarchy.
+   - its a non-linear data structure.
+#Properties of tree:
+   - its a recursive data structure
+   - in a tree with n nodes there are (n-1) edges
+   - Depth and height:
+      - depth of x = length of path from root to x  
+                     OR no of edges in path from root to x.
+      - height of x = no of edges in longest path 
+                      from x to a leaf.
+      - height of tree = height of root node.
+#Applications:
+   1.storing naturally hierarchical data
+     e.g. file system.
+   2.organize data for quick search, insertion 
+   and deletion.
+     e.g. Binary search trees.
+   3. Trie -> dictionary.
+   4. Network routing algorithms.
+#Binary tree:
+   - each node can have at most 2 children.
+   Maximum number of nodes in a binary tree
+    with height h = 2^(h+1)-1
+   #Perfect binary tree:
+      Perfect Binary Tree is a Binary Tree in which all internal nodes
+      have 2 children and all the leaf nodes are at the same depth or same level.    
+         Height of perfect binary tree with n nodes 
+         = log(n+1)-1
+   #Complete binary tree: 
+      Complete Binary Tree has all levels completely filled with nodes except
+      the last level and in the last level, all the nodes are as left side as possible.
+         Height of complete binary Tree
+         = floor of log n (all logs are base to the 2)
+   #Balanced binary tree:
+      diff betwn left and right subtree is either (-1, 0 ,1)
+#Binary search tree:
+   a binary tree in which for each node, value of all nodes in left subtree
+   is lesser or equal and value of all nodes in rigth subtree
+   is greater.  
