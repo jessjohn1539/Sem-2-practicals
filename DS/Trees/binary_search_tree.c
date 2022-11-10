@@ -1,70 +1,114 @@
-//////////////////////ATTENTION: dont use this program////////////////////////////////
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
-typedef struct BSTnode
+struct node *createNode(int data); // creating a new node
+// Traversals
+void preorder(struct node *root);
+void postorder(struct node *root);
+void inorder(struct node *root);
+// searching and inserting
+struct node *search(struct node *root, int key);     // recursive search
+struct node *IterSearch(struct node *root, int key); // Iterative search
+
+struct node
 {
     int data;
     struct node *left;
     struct node *right;
-} node;
-node *root; // address of root node
-node *insert(node *root, int data);
-node *GetNewNode(int data);
-int search(node *root, int data);
-node *insert(node *root, int data)
+};
+void preorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        printf(" %d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+void postorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        postorder(root->left);
+        postorder(root->right);
+        printf(" %d ", root->data);
+    }
+}
+void inorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        postorder(root->left);
+        printf(" %d ", root->data);
+        postorder(root->right);
+    }
+}
+struct node *search(struct node *root, int key)
 {
     if (root == NULL)
-    {
-        // empty tree
-        root = GetNewNode(data);
+        return NULL;
+    if (key == root->data)
         return root;
-    }
-    else if (data <= root->data)
+    else if (key < root->data)
+        return search(root->left, key);
+    else
+        return search(root->right, key);
+}
+struct node *IterSearch(struct node *root, int key)
+{
+    while (root != NULL)
     {
-        root->left = insert(root->left, data);
+        if (key == root->data)
+            return root;
+        else if (key < root->data)
+            root = root->left;
+        else
+            root = root->right;
     }
-    else
-    {
-        root->right = insert(root->right, data);
-    }
-    return root;
+    return NULL;
 }
-node *GetNewNode(int data)
+struct node *createNode(int data)
 {
-    node *NewNode = (node *)malloc(sizeof(node *));
-    NewNode->data = data;
-    NewNode->left = NULL;
-    NewNode->right = NULL;
-    return NewNode;
+    struct node *n;                                 // creating a node pointer
+    n = (struct node *)malloc(sizeof(struct node)); // allocating memory in heap
+    n->data = data;                                 // setting the data
+    n->left = NULL;                                 // setting the left children to null
+    n->right = NULL;                                // setting the right children to null
+    return n;                                       // returning the created node
 }
-int search(node *root, int data)
+void main()
 {
-    if (root == NULL)
-        return false;
-    else if (root->data == data)
-        return true;
-    else if (data <= root->data)
-        return search(root->left, data);
+    struct node *p = createNode(5);
+    struct node *p1 = createNode(3);
+    struct node *p2 = createNode(6);
+    struct node *p3 = createNode(1);
+    struct node *p4 = createNode(4);
+
+    // linking the root with left and right children
+    p->left = p1;
+    p->right = p2;
+    p1->left = p3;
+    p1->right = p4;
+
+    printf("Preorder: ");
+    preorder(p);
+    printf("\n");
+    printf("Postorder: ");
+    postorder(p);
+    printf("\n");
+    printf("Inorder: ");
+    inorder(p);
+    printf("\n");
+
+    struct node *n = search(p, 3);
+    if (n != NULL)
+        printf("Found: %d\n", n->data);
     else
-        return search(root->right, data);
-}
-int main()
-{
-    node *root = NULL;
-    root = insert(root, 15);
-    root = insert(root, 10);
-    root = insert(root, 20);
-    root = insert(root, 25);
-    root = insert(root, 8);
-    root = insert(root, 12);
-    int n;
-    printf("Enter a number to be searched: ");
-    scanf("%d", &n);
-    if (search(root, n) == true)
-        printf("Number found!\n");
+        printf("Element not found!\n");
+
+    struct node *m = IterSearch(p, 4);
+    if (m != NULL)
+        printf("Found: %d", m->data);
     else
-        printf("Number not found!\n");
+        printf("Element not found!");
 }
